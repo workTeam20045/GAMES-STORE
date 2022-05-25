@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <img class="img-header" src="/Images/iconsHeader.jpg">
+        <div class="logotype">
+            <h1>GAMES STORE</h1>
+        </div>
+        <!-- <i class="fa fa-gamepad" aria-hidden="true"></i> -->
+        <img class="img-header" src="/Images/iconsHeader.jpg">
+    </header>
+    <hr>
+    <div class="container-products">
+        <div class="modal">
+            <button id="close-modal">X</button>
+            <input type="text" id="new-product" placeholder="Product">
+            <input type="text" id="new-price" placeholder="Price">
+            <input type="file" name="" id="new-image">
+            <button id="btn-new-create">Create new Object</button>
+    </div>
+    <nav>
+    <select name="" id="select-products"></select>
+    <button id="btn-create">Create a new Product</button>
+    <select name="" id="filterXPrice">
+        <option value="">filter for price</option>
+        <option value="Menores 2">Menor a 2</option>
+        <option value="Entre 2 y 4">Entre 2 y 4</option>
+        <option value="Mayores a 4">Mayores a 4</option>
+    </select>
+    <i class=" icons fas fa-shopping-cart" id="products"></i>
+    </nav>
+    <main id="container-cards"></main>
+    <div class="overlay " id="overlay" >
+        <div class="popup" id="popup">
+          <a href="#" id="btn-close-popup" class="btn-close-popup"><i class="fas fa-times"></i></a>
+          <div class="shoppingCart">
+            <i class="fa fa-gamepad" id="cart" aria-hidden="true"></i>
+            <h3>BUY GAMES</h3>
+          </div>
+          <div class="principal-container shoppingCart-container" >
+    
+          </div>
+        </div>
+      </div>
+    <script src="app.js"></script>
+    <script src="products.js"></script>
+</body>
+</html>
