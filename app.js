@@ -18,7 +18,7 @@ const popup= document.querySelector("#popup");
 const btn_close_popup = document.querySelector("#btn-close-popup");
 const shoppingCart_container= document.querySelector(".shoppingCart-container");
 const totel =document.querySelector('#total');
-food_cart=[];
+let games_cart=[];
 
 
 window.addEventListener('load', listProducts);
@@ -30,12 +30,14 @@ closeModal.addEventListener('click', removeModal);
 filterXPrice.addEventListener('change', filterProducts);
 
 function filterProducts(event) {
-    const responseFilter = event.target.value === 'Menores 2'
-    ? products.filter(element => element.price < 20)
-    :event.target.value === 'Entre 2 y 4'
-    ? products.filter(element => element.price > 20 && element.price <= 40)
-    : event.target.value === 'Mayores a 4'
-    ? products.filter(element => element.price > 40)
+    const responseFilter = event.target.value === '$15.00 - $40.00'
+    ? products.filter(element => element.price >= 15 && element.price <= 40)
+    :event.target.value === '$41.00 - $60.00'
+    ? products.filter(element => element.price >= 41 && element.price <= 60)
+    : event.target.value === '$61.00'
+    ? products.filter(element => element.price >= 61)
+    : event.target.value === 'gratuito'
+    ? products.filter(element => element.price = 0)
     : null;
 
     main.innerHTML = '';
@@ -105,7 +107,7 @@ function createProducts(products) {
     nameCard.classList.add('name-product');
 
     const priceCard = document.createElement('p');
-    priceCard.textContent = price;
+    priceCard.textContent = price.toFixed(2);
     priceCard.classList.add('price-product');
 
     const btnCard = document.createElement('button');
@@ -137,27 +139,27 @@ function close_cart(){
   popup.classList.remove('activate');
 }
 
-const subtract_food = (event) => {
+const subtract_games = (event) => {
   let item = event.target.getAttribute('id') 
-  food_cart.splice(parseInt(food_cart.indexOf(item)),1)
-  show_food_cart();
+  games_cart.splice(parseInt(games_cart.indexOf(item)),1)
+  show_games_cart();
 }
 
 const delete_cart = (event) => {
   let item = event.target.getAttribute('id');
   
-  food_cart = food_cart.filter((id_food) => {
-    return id_food !== item;
+  games_cart = games_cart.filter((id_games) => {
+    return id_games !== item;
   });
 
-  show_food_cart();
+  show_games_cart();
 }
 
 
 
-const show_food_cart = () => {
+const show_games_cart = () => {
   shoppingCart_container.innerHTML = '';
-  let lista = [...new Set(food_cart)]; 
+  let lista = [...new Set(games_cart)]; 
   
   lista.forEach(item => {
 
@@ -167,10 +169,10 @@ const show_food_cart = () => {
       let cont = 0;
       let total=0;
 
-      for(let id of food_cart) {
+      for(let id of games_cart) {
           if(id === item) {
             cont++;
-            total=total+parseInt(todos_productos[0].price);
+            total=total+parseFloat(todos_productos[0].price);
           }
           
       }
@@ -210,7 +212,7 @@ const show_food_cart = () => {
       sum.textContent='+';
       number.textContent=cont;
       subtract.textContent='-';
-      pricecart.textContent=total;
+      pricecart.textContent=`$${total}`;
 
       card.appendChild(imagen);
       cardContent.appendChild(title_card);
@@ -226,7 +228,7 @@ const show_food_cart = () => {
       card.appendChild(cardContent);
 
       sum.addEventListener('click', add_cart);
-      subtract.addEventListener('click', subtract_food);
+      subtract.addEventListener('click', subtract_games);
 
       shoppingCart_container.appendChild(card);
 
@@ -236,6 +238,6 @@ const show_food_cart = () => {
 }
 
 const add_cart = (event) => {
-  food_cart.push(event.target.getAttribute('id'));
-  show_food_cart();
+  games_cart.push(event.target.getAttribute('id'));
+  show_games_cart();
 }
