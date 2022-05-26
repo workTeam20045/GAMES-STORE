@@ -30,14 +30,14 @@ closeModal.addEventListener('click', removeModal);
 filterXPrice.addEventListener('change', filterProducts);
 
 function filterProducts(event) {
-    const responseFilter = event.target.value === '$15.00 - $40.00'
+    const responseFilter = event.target.value === 'gratuito'
+    ? products.filter(element => element.price < 15)
+    : event.target.value === '$15.00 - $40.00'
     ? products.filter(element => element.price >= 15 && element.price <= 40)
-    :event.target.value === '$41.00 - $60.00'
+    : event.target.value === '$41.00 - $60.00'
     ? products.filter(element => element.price >= 41 && element.price <= 60)
     : event.target.value === '$61.00'
     ? products.filter(element => element.price >= 61)
-    : event.target.value === 'gratuito'
-    ? products.filter(element => element.price = 0)
     : null;
 
     main.innerHTML = '';
@@ -107,7 +107,7 @@ function createProducts(products) {
     nameCard.classList.add('name-product');
 
     const priceCard = document.createElement('p');
-    priceCard.textContent = price.toFixed(2);
+    priceCard.textContent = price;
     priceCard.classList.add('price-product');
 
     const btnCard = document.createElement('button');

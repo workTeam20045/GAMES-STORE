@@ -5,7 +5,7 @@
     margin: 0px;
   }
   body{
-    width: 99.1vw;
+    width: 100vw;
     height: 100vh;
     background: linear-gradient(-135deg, black,grey, black);
   }
@@ -14,7 +14,6 @@
     background-size: cover;
     background-position: center;
     height: 20vh;
-    width: 100 vw;
     display: flex;
     align-items: center;
     justify-content: space-around;
