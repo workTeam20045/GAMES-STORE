@@ -10,6 +10,7 @@ const newPrice = document.querySelector('#new-price');
 const newImage = document.querySelector('#new-image');
 const btnNewProduct = document.querySelector('#btn-new-create');
 const filterXPrice = document.querySelector('#filterXPrice');
+const filterXCategory = document.querySelector('#filterXCategory');
 
 // AGREGAR AL CARRITO
 const shopping_card = document.querySelector('#products');
@@ -27,9 +28,10 @@ btnCreate.addEventListener('click',showModal);
 btnNewProduct.addEventListener('click', createNewProducts);
 newImage.addEventListener('change', importImage);
 closeModal.addEventListener('click', removeModal);
-filterXPrice.addEventListener('change', filterProducts);
+filterXPrice.addEventListener('change', filterPrice);
+filterXCategory.addEventListener('change', filterCategory);
 
-function filterProducts(event) {
+function filterPrice(event) {
     const responseFilter = event.target.value === 'gratuito'
     ? products.filter(element => element.price < 15)
     : event.target.value === '$15.00 - $40.00'
@@ -42,6 +44,22 @@ function filterProducts(event) {
 
     main.innerHTML = '';
     responseFilter.map(element => createProducts(element))
+}
+function filterCategory(event) {
+  const category = event.target.value === "Accion"
+  ? products.filter(element => element.genero === "Acción")
+  : event.target.value === 'Aventura'
+  ? products.filter(element => element.genero === "Aventura")
+  : event.target.value === "Disparo"
+  ? products.filter(element => element.genero === "Juego de disparos")
+  : event.target.value === "Deportes"
+  ? products.filter(element => element.genero === "Deportes")
+  : event.target.value === "Terror"
+  ? products.filter(element => element.genero === "Terror")
+  : null;
+
+  main.innerHTML = ''
+  category.map(element => createProducts(element))
 }
 
 function removeModal() {
@@ -124,6 +142,7 @@ function createProducts(products) {
     main.appendChild(card);
 
 }
+
 shopping_card.addEventListener('click', show_cart)
 
 
@@ -155,8 +174,6 @@ const delete_cart = (event) => {
   show_games_cart();
 }
 
-
-
 const show_games_cart = () => {
   shoppingCart_container.innerHTML = '';
   let lista = [...new Set(games_cart)]; 
@@ -172,7 +189,7 @@ const show_games_cart = () => {
       for(let id of games_cart) {
           if(id === item) {
             cont++;
-            total=total+parseFloat(todos_productos[0].price);
+            total += parseFloat(todos_productos[0].price);
           }
           
       }

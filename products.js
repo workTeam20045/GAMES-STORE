@@ -1,5 +1,5 @@
 const products = [
-    {id: 1, name: 'Horizon Forbidden Wes', plataforma: 'PS4 y PS5', unidades: 60, genero: 'Aventura', price: 69.99, image: "Images/Horizon Forbidden Wes.jpg" },
+    {id: 1, name: 'Horizon Forbidden West', plataforma: 'PS4 y PS5', unidades: 60, genero: 'Aventura', price: 69.99, image: "Images/Horizon Forbidden Wes.jpg" },
     {id: 2, name: 'Kena Bridge of Spirits', plataforma: 'PS4 y PS5', unidades: 60, genero: 'Aventura', price: 39.99, image: "Images/Kena Bridge of Spirits.jpg" },
     {id: 3, name: 'Assassins Creed Valhalla', plataforma: 'PS4', unidades: 60, genero: 'Aventura', price: 23.99,  image: "Images/Assassins Creed Valhalla.jpg" },
     {id: 4, name: 'The Last of Us Part II', plataforma: 'PS4', unidades: 60, genero: 'Aventura', price: 39.99, image: "Images/The Last of Us Part II.jpg"},
@@ -23,7 +23,7 @@ const products = [
     {id: 22, name: 'Battlefield 2042', plataforma: 'PS4', unidades: 60, genero: 'Juego de disparos', price: 59.99, image: "Images/Battlefield 2042.jpg"},
     {id: 23, name: 'Fortnite', plataforma: 'PS4 y PS5', unidades: 60, genero: 'Juego de disparos', price: 0, image: "Images/Fortnite.jpg"},
     {id: 24, name: 'Red Dead Redemption 2', plataforma: 'PS5', unidades: 60, genero: 'Juego de disparos', price: 30.99, image: "Images/Red Dead Redemption 2.jpg"},
-    {id: 25, name: 'Hello Neighbor 2 Standard Edition', plataforma: 'PS4 y PS5', unidades: 60, genero: 'Terror', price: 39.99, image: "Images/Hello Neighbor 2.jpg"},
+    {id: 25, name: 'Hello Neighbor 2', plataforma: 'PS4 y PS5', unidades: 60, genero: 'Terror', price: 39.99, image: "Images/Hello Neighbor 2.jpg"},
     {id: 26, name: 'The Quarry', plataforma: 'PS4 y PS5', unidades: 60, genero: 'Terror', price: 69.99, image: ""},
     {id: 27, name: 'The Trap Remake', plataforma: 'PS5', unidades: 60, genero: 'Terror', price: 29.99, image: "https://sm.ign.com/t/ign_es/game/r/resident-e/resident-evil-village_6xmb.1200.jpg"},
     {id: 28, name: 'Chernobylite', plataforma: 'PS5', unidades: 60, genero: 'Terror', price: 29.99, image: ""},
