@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styleLogIn.css">
+</head>
+<body>
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form id="register" action="">
+			<h1>Create Account</h1>
+			<span>or use your email for registration</span>
+			<div class="social-icons">
+				<img src="/Images/fb.png">
+				<img src="/Images/gp.png">
+				<img src="/Images/tw.png">
+			</div>
+			<input id="fullName" type="text" placeholder="Name" />
+			<input id="userName" type="text" placeholder="UserName" />
+			<input id="password" type="password" placeholder="Password" />
+			<input id="confirmPassword" type="password" placeholder="ConfirmPassword" />
+			<button>Register</button>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form id="login" action="">
+			<h1>Sign in</h1>
+			<span>or use your account</span>
+			<div class="social-icons">
+				<img src="/Images/fb.png">
+				<img src="/Images/gp.png">
+				<img src="/Images/tw.png">
+			</div>
+			<input id="newUser" type="text" placeholder="UserName" />
+			<input id="newPassword" type="password" placeholder="Password" />
+			<a href="#">Forgot your password?</a>
+			<button><a href="index.html">Sign In </a></button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Welcome Back!</h1>
+				<p>To keep connected with us please login with your personal info</p>
+				<button class="ghost" id="signIn">Sign In</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Hello, Friend!</h1>
+				<p>Enter your personal details and start journey with us</p>
+				<button class="ghost" id="signUp">Register</button>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="appLogIn.js"></script>
+</body>
+</html>
