@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
 * {
+	font-family: 'Merriweather', serif;
 	box-sizing: border-box;
 }
 
 body {
-	background-image: url(/Images/FondoBf.jpg);
+	background-image: url(/Images/fondo.jpg);
 	background-size: cover;
 	display: flex;
 	justify-content: center;
@@ -26,7 +27,7 @@ h2 {
 }
 
 p {
-	font-size: 14px;
+	font-size: 1rem			;
 	font-weight: 100;
 	line-height: 20px;
 	letter-spacing: 0.5px;
@@ -59,15 +60,15 @@ a {
 
 button {
 	border-radius: 20px;
-	border: 1px solid #FF4B2B;
-	background: linear-gradient(to right, #ff105f, #ffad06);
-	/* color: #FFFFFF; */
+	border: 1px solid #9700c5;
+	background: linear-gradient(to right, #ffffff, #d2d2d2);
 	font-size: 12px;
 	font-weight: bold;
 	padding: 12px 45px;
 	letter-spacing: 1px;
 	text-transform: uppercase;
 	transition: transform 80ms ease-in;
+	margin-top: 20px;
 }
 
 button:active {
@@ -79,8 +80,9 @@ button:focus {
 }
 
 button.ghost {
-	background-color: transparent;
-	border-color: #FFFFFF;
+	background: linear-gradient(to right, #ffffff, #d2d2d2);
+	border-radius: 20px;
+	border: 1px solid #000000;
 }
 
 form {
@@ -92,21 +94,28 @@ form {
 	padding: 0 50px;
 	height: 100%;
 	text-align: center;
+	
 }
 
 input {
 	background-color: #eee;
 	border: none;
+	outline: none;
 	padding: 12px 15px;
 	margin: 8px 0;
 	width: 100%;
+	font-size: 1.2rem;
+	font-family: Arial, Helvetica, sans-serif;
+}
+input:focus {
+	border-color: #9700c5;
+	box-shadow:0 0 8px 0 #9700c5;
 }
 
 .container {
 	background-color: #fff;
 	border-radius: 10px;
-	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
-			0 10px 10px rgba(0,0,0,0.22);
+	box-shadow:0 0 15px 0 #9700c5;
 	position: relative;
 	overflow: hidden;
 	width: 768px;
@@ -173,9 +182,7 @@ input {
 }
 
 .overlay {
-	background: #FF416C;
-	background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
-	background: linear-gradient(to right, #FF4B2B, #FF416C);
+	background: linear-gradient(to right, #9700c5, #bb5cd7);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;

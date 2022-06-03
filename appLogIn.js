@@ -70,20 +70,15 @@ function loginUser(event) {
 	if (newUser.value === "" || newPassword.value === "") {
 		alert("Por favor llene todos los campos");
 	}
-
 	else if (!validateUser.find(user => user.user === newUser.value)) {
 		alert("El usuario no existe");
 	}
-
-	else if (
-		validateUser.find(user => user.user === newUser.value).newPassword !== newPassword.value
-	) {
+	else if (validateUser.find(user => user.user === newUser.value).newPassword !== newPassword.value) {
 		alert("La contraseña no coincide");
 	}
-
 	else {
 		alert("Usuario registrado con éxito");
-		window.location.href="http://127.0.0.1:5501/index.html#"
+		window.location.href= ""
 	}
 }
 

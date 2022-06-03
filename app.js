@@ -11,6 +11,7 @@ const newImage = document.querySelector('#new-image');
 const btnNewProduct = document.querySelector('#btn-new-create');
 const filterXPrice = document.querySelector('#filterXPrice');
 const filterXCategory = document.querySelector('#filterXCategory');
+const counter_label = document.getElementById('counter-label')
 
 // AGREGAR AL CARRITO
 const shopping_card = document.querySelector('#products');
@@ -159,19 +160,11 @@ function close_cart(){
 }
 
 const subtract_games = (event) => {
+  let resta = Number(counter_label.textContent)-1;
   let item = event.target.getAttribute('id') 
   games_cart.splice(parseInt(games_cart.indexOf(item)),1)
   show_games_cart();
-}
-
-const delete_cart = (event) => {
-  let item = event.target.getAttribute('id');
-  
-  games_cart = games_cart.filter((id_games) => {
-    return id_games !== item;
-  });
-
-  show_games_cart();
+  counter_label.textContent = resta;
 }
 
 const show_games_cart = () => {
@@ -251,10 +244,23 @@ const show_games_cart = () => {
 
       deletec.setAttribute('id',todos_productos[0].id);
       deletec.addEventListener('click', delete_cart)
+      
+      function delete_cart(event) {
+        let cantidad = Number(counter_label.textContent)-cont;
+        counter_label.textContent = cantidad;
+        let item = event.target.getAttribute('id');
+        games_cart = games_cart.filter((id_games) => {
+        return id_games !== item;
+        });
+
+          show_games_cart();
+      }
   })
 }
 
 const add_cart = (event) => {
+  let sumar = Number(counter_label.textContent)+1
   games_cart.push(event.target.getAttribute('id'));
   show_games_cart();
+  counter_label.textContent = sumar;
 }
