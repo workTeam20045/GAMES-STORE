@@ -30,7 +30,7 @@
   .icons{
     font-size: 3.5rem;
     cursor: pointer;
-    margin: 15px;
+    margin-top: 15px;
     color: #2D64E6;
   }
   .img-header {
@@ -48,11 +48,15 @@ nav{
   width: 100vw;
   height: 10vh;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  align-items:center;
+  gap: 40px;
+  margin-top: 1rem;
 }
 #counter-label{
   font-size: 2rem;
   color: black;
+  margin-left: 5px;
 }
 
 select {
@@ -68,6 +72,7 @@ select {
 #compras{
   display: flex;
   width:30px;
+  padding: 5px;
 }
 
 #btn-create{
@@ -78,7 +83,6 @@ select {
 main {
     background-color: transparent;
     width: 100vw;
-    /* margin-left: 8rem; */
     position: relative;
     display: flex;
     flex-direction: row;
@@ -133,7 +137,6 @@ main {
     border-radius:20px;
     color: white;
     font-size: 1rem;
-    /* margin-left: 7rem; */
     margin-top: 1rem;
     text-transform: uppercase;
   }
